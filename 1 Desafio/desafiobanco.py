@@ -23,33 +23,33 @@ while True:
             saldo += valor
             extrato += f"Depósito: R$ {valor:.2f}\n"
         else:
-            print("Valor De Deposito Invalido")
+            print("Operação invalida, Valor De Deposito Invalido")
         
     elif opcao == "s":
         valor = float(input("Informe o valor do saque: "))
        
         if valor <= 0 :
-            print("Valor De Saque Invalido")
+            print("Operação invalida, Valor De Saque Invalido")
         elif valor > 500 :
-            print ("Operação invalida Limite maxido para saque é de R$500.00")
+            print ("Operação invalida, Limite maxido para saque é de R$500.00")
 
         elif numero_saques == LIMITE_SAQUES:
-            print("Limite Diario de Saque Atingido")
+            print("Operação invalida, Limite Diario de Saque Atingido")
 
         elif numero_saques <= 3 :
           saldo = saldo - valor 
           extrato += f"Saque: R$ {valor:.2f}\n"
           numero_saques += 1
-          print(saldo)              
-          print(f"Numero de Saques {numero_saques}")
 
         else:
             print("Valor de saque maior que o saldo")
 
     elif opcao == "e":
-        print("Não foram realizadas movimentações." if not extrato else extrato)
+        print("\n================ EXTRATO ================")
+        print("Não foram realizadas de movimentações." if not extrato else extrato)
         print(f"Saldo Atual de R${saldo:.2f}")
-
+        print("==========================================")
+        
     elif opcao == "q":
         break
 
